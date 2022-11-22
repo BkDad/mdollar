@@ -6,7 +6,7 @@ import { cloneDeep } from "lodash"
  */
 export const deepCopy = <T>(value: T): T => cloneDeep(value)
 /**
- * 
+ * 根据指定长度分割数组
  * @param array 传入任意数组
  * @param subLength 需要分割的长度
  * @returns 返回一个新数组
@@ -106,3 +106,15 @@ export const listToTree = <T extends { parentID: number, children: T[] }>(list: 
     });
 };
 
+/**
+ * 树状结构拍平
+ * @param children 
+ * @returns 
+ */
+export const getFlatTree = <T extends { children: T[] }>(children: T[]): T[] => {
+    return children.reduce((pre, cur) => {
+        let childrenList = cur.children
+        let result: any = [...pre, cur, ...getFlatTree(childrenList)];
+        return result;
+    }, []);
+};
