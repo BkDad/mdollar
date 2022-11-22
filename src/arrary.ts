@@ -111,9 +111,9 @@ export const listToTree = <T extends { parentID: number, children: T[] }>(list: 
  * @param children 
  * @returns 
  */
-export const getFlatTree = <T extends { children: T[] }>(children: T[]): T[] => {
+export const getFlatTree = <T extends { children?: T[] }>(children: T[]): T[] => {
     return children.reduce((pre, cur) => {
-        let childrenList = cur.children
+        let childrenList = cur.children || []
         let result: any = [...pre, cur, ...getFlatTree(childrenList)];
         return result;
     }, []);
