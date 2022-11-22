@@ -3,7 +3,7 @@
  * @Autor: 万洲
  * @Date: 2022-10-17 15:04:29
  * @LastEditors: 万洲
- * @LastEditTime: 2022-10-17 15:06:15
+ * @LastEditTime: 2022-11-15 16:28:27
  */
 export const getTimeState = (): string => {
     let now = new Date(),
@@ -27,3 +27,18 @@ export const getTimeState = (): string => {
     }
 }
 
+/**
+ * 是否为手机端
+ */
+export const isMobile = () => {
+    let userAgentInfo = navigator.userAgent.toLowerCase();
+    let Agents = new Array('android', 'iphone', 'symbianos', 'windows phone', 'ipad', 'ipod');
+    let flag = false;
+    for (let v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) !== -1) {
+            flag = true;
+            break;
+        }
+    }
+    return flag;
+};
