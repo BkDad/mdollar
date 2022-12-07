@@ -3,15 +3,25 @@
  * @Autor: 万洲
  * @Date: 2022-10-17 15:05:17
  * @LastEditors: 万洲
- * @LastEditTime: 2022-10-17 15:07:51
+ * @LastEditTime: 2022-12-07 13:52:03
  */
 /**
  * 判断是否为图片
- * @param ext 图片平常
+ * @param ext 
  * @returns 
  */
-export const isAssetTypeAnImage = (ext: string) => {
+export const isAssetTypeAnImage = (fileName: string) => {
+    const ext = fileName.substring(fileName.lastIndexOf("."))
     return [".png", ".jpg", ".jpeg", ".bmp", ".gif", ".webp", ".svg", ".tiff"].indexOf(ext.toLowerCase()) !== -1;
+}
+/**
+ * 判断是否为视频
+ * @param ext 
+ * @returns 
+ */
+export const isAssetTypeAnVedio = (fileName: string) => {
+    const ext = fileName.substring(fileName.lastIndexOf("."))
+    return [".mp4", ".avi", "wmv", "mov"].indexOf(ext.toLowerCase()) !== -1;
 }
 /**
  * 判断对象是否为空
