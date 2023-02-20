@@ -5,6 +5,10 @@
  * @LastEditors: 万洲
  * @LastEditTime: 2022-11-15 16:28:27
  */
+/**
+ * 根据当前时间获取问候语
+ * @returns 
+ */
 export const getTimeState = (): string => {
     let now = new Date(),
         hour = now.getHours();

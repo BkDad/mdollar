@@ -11,7 +11,7 @@ export const deepCopy = <T>(value: T): T => cloneDeep(value)
  * @param subLength 需要分割的长度
  * @returns 返回一个新数组
  */
-export const divisionArr = (array: any[], subLength: number) => {
+export const divisionArr = <T>(array: T[], subLength: number): T[][] => {
     let index = 0;
     let newArray = [];
     while (index < array.length) { newArray.push(array.slice(index, index += subLength)); }
@@ -32,10 +32,10 @@ export const sortClass = <T>(arr: T[], field: string) => Array.from(new Set(arr.
      * @param fieldValue 字段值是多少
      * @returns 返回一个新数组
      */
-export const deleteArrElement = (arr: any[], fieldName: string, fieldValue: string | number) => {
+export const deleteArrElement = <T>(arr: T[], fieldName: string, fieldValue: string | number) :T[]=> {
     let tempArr: any[] = JSON.parse(JSON.stringify(arr))
     let index = tempArr.findIndex(item => item[fieldName] === fieldValue)
-    if (index === -1) return alert("未找到要删除数组")
+    if (index === -1) return arr
     tempArr.splice(index, 1)
     return tempArr
 }
@@ -48,27 +48,11 @@ export const deleteArrElement = (arr: any[], fieldName: string, fieldValue: stri
 export const sortArrToLetter = <T>(array: T[], fields: string) => {
     return array.sort(
         function compareFunction(param1, param2) {
-            //@ts-ignore
             return param1[fields].localeCompare(param2[fields], "zh");
         }
     );
 }
-/**
- * 
- * @param ItemArr 对象数组
- * @param fields 获取哪个字段
- * @param separate 分隔符
- * @returns 返回用户列表名字名称
- */
-export const ItemArrToName = <T>(ItemArr: T[], fields: string, separate: string = "-") => {
-    if (!ItemArr || !ItemArr[0]) return;
-    let result: string = "";
-    ItemArr.forEach((item, index) => {
-        if (!item[fields]) return
-        result = `${result}${index !== 0 ? separate : ""}${item[fields]}`
-    })
-    return result;
-};
+
 
 /**
     * 搜索列表致使搜索字段名带高亮，只支持react，需配合dangerouslySetInnerHTML属性一起使用
@@ -96,9 +80,9 @@ export const serarchLight = <T>(searchValue: string, totalList: T[], fields: str
    * @param fields 父级本身id
    * @returns 
    */
-export const listToTree = <T extends { parentID: number, children: T[] }>(list: T[], parentId: number, fields: string): T[] => {
+export const listToTree = <T extends { parentId: number, children: T[] }>(list: T[], parentId: number, fields: string): T[] => {
     return list.filter((item) => {
-        if (item.parentID === parentId) {
+        if (item.parentId === parentId) {
             item.children = listToTree(list, item[fields], fields);
             return true;
         }
@@ -114,7 +98,7 @@ export const listToTree = <T extends { parentID: number, children: T[] }>(list: 
 export const getFlatTree = <T>(children: T[], childrenName: string = "children"): T[] => {
     return children.reduce((pre, cur) => {
         let childrenList = cur[childrenName] || []
-        let result: any = [...pre, cur, ...getFlatTree(childrenList)];
+        let result: any = [...pre, cur, ...getFlatTree(childrenList, childrenName)];
         return result;
     }, []);
 };

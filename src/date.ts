@@ -7,8 +7,19 @@
  */
 //@ts-ignore
 import fuiUtils from "./fuiUtils.js"
+
+/**
+ * 
+ * @param string 字符串日期 xxxx-xx-xx格式
+ * @returns 
+ */
 export const newDate = (string: string) => new Date(string.replace(/-/g, "/"))
 
+/**
+ * 根据日期获取距离当前时间时长，动态显示距离目前多久
+ * @param stringTime 字符串日期 xxxx-xx-xx格式
+ * @returns 
+ */
 export const friendlyFormatTime = (stringTime: string) => {
     if (!stringTime) return
     let dateObject = newDate(stringTime)
