@@ -32,7 +32,7 @@ export const sortClass = <T>(arr: T[], field: string) => Array.from(new Set(arr.
      * @param fieldValue 字段值是多少
      * @returns 返回一个新数组
      */
-export const deleteArrElement = <T>(arr: T[], fieldName: string, fieldValue: string | number) :T[]=> {
+export const deleteArrElement = <T>(arr: T[], fieldName: string, fieldValue: string | number): T[] => {
     let tempArr: any[] = JSON.parse(JSON.stringify(arr))
     let index = tempArr.findIndex(item => item[fieldName] === fieldValue)
     if (index === -1) return arr
@@ -52,8 +52,6 @@ export const sortArrToLetter = <T>(array: T[], fields: string) => {
         }
     );
 }
-
-
 /**
     * 搜索列表致使搜索字段名带高亮，只支持react，需配合dangerouslySetInnerHTML属性一起使用
     * dangerouslySetInnerHTML={{ __html: item[fields] }}
