@@ -5,12 +5,11 @@
  * @LastEditors: 万洲
  * @LastEditTime: 2022-11-10 10:49:40
  */
-import test from '../src/index';
+import aaa from "../src/index"
 
+const testFunctions = () => {
+  console.log("执行结果======");
+}
 describe('blah', () => {
-  it('works', () => {
-    console.log(123123123);
-    
-    // expect(sum(1, 1)).toEqual(2);
-  });
+  it('works', testFunctions);
 });

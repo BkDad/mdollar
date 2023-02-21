@@ -1,11 +1,10 @@
 {
-  "version": "1.2.6",
+  "version": "1.0.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "engines": {
     "node": ">=10"
@@ -31,7 +30,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "wzjs-utils",
+  "name": "mdollar",
   "author": "万洲",
   "module": "dist/mylib.esm.js",
   "size-limit": [

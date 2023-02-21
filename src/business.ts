@@ -46,3 +46,17 @@ export const isMobile = () => {
     }
     return flag;
 };
+
+/**
+ * @desc 等待多少毫秒再执行 ，同步阻塞
+ * @param {String} millisecond 毫秒
+ **/
+export const sleep = (millisecond: number) => {
+    let now = new Date();
+    let exitTime = now.getTime() + millisecond;
+    while (true) {
+        now = new Date();
+        if (now.getTime() > exitTime) return;
+    }
+}
+

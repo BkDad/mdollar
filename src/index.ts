@@ -11,6 +11,17 @@ import * as is from "./is"
 import * as object from "./object"
 import * as string from "./string"
 import * as date from "./date"
+
+// 全量引入
 const wzUtils = { ...business, ...is, ...object, ...string, ...date, ...arrary, }
 export default wzUtils
+
+// 支持按需引入
+export * from "./arrary"
+export * from "./business"
+export * from "./is"
+export * from "./object"
+export * from "./string"
+export * from "./date"
+
 // npm publish --access=public 

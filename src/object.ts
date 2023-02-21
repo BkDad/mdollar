@@ -10,7 +10,7 @@
  * @param obj 对象
  * @returns 
  */
-export const mapObjectToQueryString = (obj: object, takeHead = true) => {
+export const mapObjectToQueryString = (obj: any, takeHead = true) => {
     var str = [];
     for (let p in obj)
         if (obj.hasOwnProperty(p)) {

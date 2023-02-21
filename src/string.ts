@@ -62,3 +62,62 @@ export const getRandomString = (len: number = 15) => {
     }
     return _str;
 }
+
+
+/**
+ * 英文首字母大写：english=>English
+ * @param value 传入值
+ * @returns 
+ */
+export const titleCase = (value: string) => {
+    if (value == null || value.length === 0) return value;
+    return value.replace(/^[a-z]/, (matchStr) => {
+        return matchStr.toLocaleUpperCase();
+    });
+}
+
+/**
+ * 把连续出现多次的字母字符串进行压缩。aaabbbbcccccd=>3a4b5cd
+ * @param {String} value 需要压缩的字符串
+ * @param {Boolean} ignoreCase 是否忽略大小写
+ */
+export const compressLetter = (value: string, ignoreCase: boolean) => {
+    let pattern = new RegExp("([a-zA-Z])\\1+", ignoreCase ? "ig" : "g");
+    return value.replace(pattern, (matchStr, group_1) => {
+        return matchStr.length + group_1;
+    });
+}
+
+
+/**
+ * @desc 去左右空格
+ * @param {String} value 需要处理的字符串
+ **/
+export const trim = (value: string) => {
+    return value.replace(/(^\s*)|(\s*$)/g, "");
+}
+
+/**
+ * @desc 去所有空格
+ * @param {String} value 需要处理的字符串
+ **/
+export const trimAll = (value: string) => {
+    return value.replace(/\s+/g, "")
+}
+
+/**
+ * @desc 格式化手机号码
+ * @param {String} num 手机号码
+ **/
+export const numberFormatter = (num: string) => {
+    return num.length === 11 ? num.replace(/^(\d{3})\d{4}(\d{4})$/, '$1****$2') : num;
+}
+
+/**
+ * @desc 获取uuid
+ */
+export const getUUID = () => {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+        return (c === 'x' ? (Math.random() * 16 | 0) : ('r&0x3' as any | '0x8')).toString(16)
+    })
+}

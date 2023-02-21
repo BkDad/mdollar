@@ -5,9 +5,8 @@
  * @LastEditors: 万洲
  * @LastEditTime: 2022-11-09 16:58:38
  */
-//@ts-ignore
-import fuiUtils from "./fuiUtils.js"
 
+// const fuiUtils = require('./fuiUtils.js')
 /**
  * 
  * @param string 字符串日期 xxxx-xx-xx格式
@@ -37,13 +36,9 @@ export const friendlyFormatTime = (stringTime: string) => {
     if (time < 0) {
         result = "--";
     } else if (time / month >= 1) {
-        //@ts-ignore
-        // result = parseInt(time / month) + "月前";
-        result = fuiUtils.dateFormatter(dateObject, "y-m-d", 4);
+        result = dateFormatter(dateObject, "y-m-d", 4);
     } else if (time / week >= 1) {
-        //@ts-ignore
-        result = fuiUtils.dateFormatter(dateObject, "y-m-d", 4);
-        // result = parseInt(time / week) + "周前";
+        result = dateFormatter(dateObject, "y-m-d", 4);
         return stringTime
     } else if (time / day >= 1) {
         //@ts-ignore
@@ -76,4 +71,88 @@ export const friendlyFormatTime = (stringTime: string) => {
 
      * @param {Boolean} isMs 时间戳精度是否为毫秒，默认为true（当精度为秒时传false），type=2时有效
  **/
-export const dateFormatter: (date: Date, formatter: string, type: number, isMs?: boolean) => void = fuiUtils.dateFormatter
+export const dateFormatter = (date: string | Date, format: string, type = 1, isMs = true) => {
+    const _formatDate = (formatStr: string, fdate: any, type = 1, isMs: boolean) => {
+        if (!fdate) return '';
+        let fTime, fStr = 'ymdhis';
+        if (type === 4) {
+            fTime = fdate;
+        } else {
+            fdate = fdate.toString()
+            if (~fdate.indexOf('.')) {
+                fdate = fdate.substring(0, fdate.indexOf('.'));
+            }
+            fdate = fdate.replace('T', ' ').replace(/\-/g, '/');
+            if (!formatStr)
+                formatStr = "y-m-d h:i:s";
+            if (fdate) {
+                if (type === 2) {
+                    fdate = isMs ? Number(fdate) : Number(fdate) * 1000
+                }
+                fTime = new Date(fdate);
+            } else {
+                fTime = new Date();
+            }
+        }
+        let month = fTime.getMonth() + 1;
+        let day = fTime.getDate();
+        let hours = fTime.getHours();
+        let minu = fTime.getMinutes();
+        let second = fTime.getSeconds();
+        month = month < 10 ? '0' + month : month;
+        day = day < 10 ? '0' + day : day;
+        hours = hours < 10 ? ('0' + hours) : hours;
+        minu = minu < 10 ? '0' + minu : minu;
+        second = second < 10 ? '0' + second : second;
+        let formatArr = [
+            fTime.getFullYear().toString(),
+            month.toString(),
+            day.toString(),
+            hours.toString(),
+            minu.toString(),
+            second.toString()
+        ]
+        for (let i = 0; i < formatArr.length; i++) {
+            formatStr = formatStr.replace(fStr.charAt(i), formatArr[i]);
+        }
+        return formatStr;
+    }
+    /**
+       * @desc 格式化时间
+       * @param timeStr 时间字符串 20191212162001
+       * @param formatStr 需要的格式 如 y-m-d h:i:s | y/m/d h:i:s | y/m/d | y年m月d日 等
+       **/
+    const _formatTimeStr = (timeStr: string, formatStr: string): any => {
+        if (!timeStr) return;
+        timeStr = timeStr.toString()
+        if (timeStr.length === 14) {
+            let timeArr = timeStr.split('')
+            let fStr = 'ymdhis'
+            if (!formatStr) {
+                formatStr = 'y-m-d h:i:s'
+            }
+            let formatArr = [
+                [...timeArr].splice(0, 4).join(''),
+                [...timeArr].splice(4, 2).join(''),
+                [...timeArr].splice(6, 2).join(''),
+                [...timeArr].splice(8, 2).join(''),
+                [...timeArr].splice(10, 2).join(''),
+                [...timeArr].splice(12, 2).join('')
+            ]
+            for (let i = 0; i < formatArr.length; i++) {
+                formatStr = formatStr.replace(fStr.charAt(i), formatArr[i])
+            }
+            return formatStr
+        }
+        return timeStr
+    }
+    let formatDate = ""
+    if (type === 3) {
+        formatDate = _formatTimeStr(date as string, format)
+    } else {
+        formatDate = _formatDate(format, date, type, isMs)
+    }
+    return formatDate;
+}
+
+
