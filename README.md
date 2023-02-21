@@ -1,4 +1,4 @@
-# wzjs-utils
+# mdollar
 
 # 介绍
 
@@ -16,10 +16,10 @@
 
 ## 安装命令
 
-安装wzjs-utils
+安装mdollar
 
 ```bash
-npm install wzjs-utils # or yarn add wzjs-utils
+npm install mdollar # or yarn add mdollar
 ```
 
 ## 使用方法
@@ -27,15 +27,15 @@ npm install wzjs-utils # or yarn add wzjs-utils
 ### 引入方式
 
 ```typescript
-import wzJsUtils from "wzjs-utils"
+import $$ from "mdollar"
 //深拷贝
-wzJsUtils.deepCopy({ name: "wzJsUtils" })
+$$.deepCopy({ name: "$$" })
 ```
 
 ### 合并某工具类，并且提供类型提示
 
 ```typescript
-import wzJsUtils from "wzjs-utils"
+import $$ from "mdollar"
 class wzUtilsClass {
     /**
      * 加载
@@ -48,10 +48,10 @@ class wzUtilsClass {
     hideLoading = () => {}
 }
 
-const wzUtils: wzUtilsClass & typeof wzJsUtils = new wzUtilsClass() as any
+const wzUtils: wzUtilsClass & typeof $$ = new wzUtilsClass() as any
 // 合并utils
-for (const key in wzJsUtils) {
-    wzUtils[key] = wzJsUtils[key]
+for (const key in $$) {
+    wzUtils[key] = $$[key]
 }
 export default wzUtils
 
