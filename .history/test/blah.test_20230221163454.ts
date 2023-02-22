@@ -5,7 +5,7 @@
  * @LastEditors: 万洲
  * @LastEditTime: 2022-11-10 10:49:40
  */
-// import aaa from '../src/index';
+import aaa from '../src/index';
 
 const testFunctions = () => {
   console.log('执行结果======');
@@ -15,3 +15,4 @@ describe('blah', () => {
 });
 
 // haolin test
+// const wanzhou = '真帅!';

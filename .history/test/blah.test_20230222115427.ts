@@ -15,3 +15,4 @@ describe('blah', () => {
 });
 
 // haolin test
+// const wanzhou = '真帅!';
