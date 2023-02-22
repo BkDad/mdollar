@@ -7,7 +7,7 @@
  */
 /**
  * 判断是否为图片
- * @param ext 
+ * @param fileName 文件名称
  * @returns 
  */
 export const isImage = (fileName: string) => {
@@ -16,7 +16,7 @@ export const isImage = (fileName: string) => {
 }
 /**
  * 判断是否为视频
- * @param ext 
+ * @param fileName 文件名称
  * @returns 
  */
 export const isVedio = (fileName: string) => {
@@ -25,21 +25,21 @@ export const isVedio = (fileName: string) => {
 }
 /**
  * 判断对象是否为空
- * @param obj 
+ * @param obj 传入的对象
  * @returns 
  */
-export const objIsNull = (obj: any) => {
+export const objIsNull = <T>(obj: T) => {
     return JSON.stringify(obj) === "{}"
 }
 /**
-   * 判断数组是否为空
-   * @param arr 
-   * @returns 
-   */
-export const arraryHaveValue = (arr: any[] | undefined): boolean => {
+ * 判断数组是否为空
+ * @param arr 传入数组
+ * @returns 
+ */
+export const arraryHaveValue = <T>(arr: T[] | undefined): boolean => {
     if (!arr) return false
     if (!Array.isArray(arr)) return false
-    if (!arr[0]) return false
+    if (!arr[0] && arr[0] !== 0) return false
     return true
 }
 /**

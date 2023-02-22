@@ -5,8 +5,9 @@ const state = reactive({
   result: undefined as any,
 });
 onMounted(() => {
-  const object = [{ age: 11, name: "wz" }];
-  let result = $$.deepCopy(object);
+  const objcet = {};
+  console.log($$.getUUID());
+  let result = $$.checkSpecialCharacters("abcd！");
   state.result = result;
 });
 </script>
