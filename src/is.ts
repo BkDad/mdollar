@@ -10,7 +10,7 @@
  * @param ext 
  * @returns 
  */
-export const isAssetTypeAnImage = (fileName: string) => {
+export const isImage = (fileName: string) => {
     const ext = fileName.substring(fileName.lastIndexOf("."))
     return [".png", ".jpg", ".jpeg", ".bmp", ".gif", ".webp", ".svg", ".tiff"].indexOf(ext.toLowerCase()) !== -1;
 }
@@ -19,7 +19,7 @@ export const isAssetTypeAnImage = (fileName: string) => {
  * @param ext 
  * @returns 
  */
-export const isAssetTypeAnVedio = (fileName: string) => {
+export const isVedio = (fileName: string) => {
     const ext = fileName.substring(fileName.lastIndexOf("."))
     return [".mp4", ".avi", "wmv", "mov"].indexOf(ext.toLowerCase()) !== -1;
 }
