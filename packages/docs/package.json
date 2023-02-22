@@ -1,0 +1,20 @@
+{
+  "name": "doc",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev src",
+    "build": "vitepress build src",
+    "docs:preview": "vitepress preview src"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.46",
+    "vue": "^3.2.47"
+  },
+  "dependencies": {
+    "mdollar": "workspace:^1.0.2"
+  }
+}

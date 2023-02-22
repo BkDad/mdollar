@@ -1,10 +1,25 @@
-import { cloneDeep } from "lodash"
 /**
  * 深拷贝
  * @param value 拷贝值
  * @returns 
  */
-export const deepCopy = <T>(value: T): T => cloneDeep(value)
+export const deepCopy = <T>(value: T): T => {
+    // 数值为空直接返回
+    if (value === undefined || value === null) return value
+    // 如果不是对象或者数组直接返回
+    if (typeof value !== "object") return value
+    let result = Array.isArray(value) ? [] : {};
+    //循环遍历方便拷贝
+    for (let key in value) {
+        //判读自有属性
+        if ((value as any).hasOwnProperty(key)) {
+            //函数递归实现深层拷贝
+            result[key as string] = deepCopy(value[key])
+        }
+    }
+    return result as T
+}
+
 /**
  * 根据指定长度分割数组
  * @param array 传入任意数组
