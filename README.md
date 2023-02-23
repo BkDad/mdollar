@@ -1,64 +1,37 @@
-# mdollar
+<p align="center">
+    <img alt="logo" src="" width="120" height="120" style="margin-bottom: 10px;">
+</p>
+<h3 align="center" style="margin: 30px 0 30px;font-weight: bold;font-size:40px;">mdollar</h3>
+<h3 align="center">常用开发函数JS工具库</h3>
 
-# 介绍
+## 介绍
 
-此工具类用于业务需要
+`mdollar`是一个 js 工具库，适合用于日常开发，在 Vue 项目开发过程中，一套好用的 js 库是必不可少的，希望 mdollar 能成为您的选择。
 
-什么？还在每个项目里面复制粘贴常用的js工具库？
+## [文档：https://baikebaba.gitee.io/mdollar/](https://baikebaba.gitee.io/mdollar/)
 
-什么？复制还得考虑ts支不支持？？
+## 特性
 
-什么？不是ts还得删除类型注解？？？
+- 完整的ts类型支持
+- 体积小，只保留日常常用业务开发函数
+- 按需引入，精简打包体积
 
-什么？摸鱼时间少了？
+## 快速上手
 
-对不起，我不乐意
-
-## 安装命令
-
-安装mdollar
-
-```bash
-npm install mdollar # or yarn add mdollar
-```
+请通过[快速上手](https://baikebaba.gitee.io/mdollar/guide/install)了解更详细的内容
 
 ## 使用方法
 
-### 引入方式
+### 完整引入
 
 ```typescript
 import $$ from "mdollar"
-//深拷贝
-$$.deepCopy({ name: "$$" })
+$$.deepCopy({ name: "mdollar" })
 ```
 
-### 合并某工具类，并且提供类型提示
+### 按需引入
 
 ```typescript
-import $$ from "mdollar"
-class wzUtilsClass {
-    /**
-     * 加载
-     * @param message 
-     */
-    showLoading = (message: string = '加载中...') => {}
-    /**
-     * 停止加载 
-     */
-    hideLoading = () => {}
-}
-
-const wzUtils: wzUtilsClass & typeof $$ = new wzUtilsClass() as any
-// 合并utils
-for (const key in $$) {
-    wzUtils[key] = $$[key]
-}
-export default wzUtils
-
+import {deepCopy} from "mdollar"
+$$.deepCopy({ name: "mdollar" })
 ```
-
-
-
-## API文档
-
-##  

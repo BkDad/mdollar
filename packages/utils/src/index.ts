@@ -13,8 +13,9 @@ import * as string from "./string"
 import * as date from "./date"
 
 // 全量引入
-const wzUtils = { ...business, ...is, ...object, ...string, ...date, ...arrary, }
-export default wzUtils
+const mdollar = { ...business, ...is, ...object, ...string, ...date, ...arrary, }
+export type TMdollar = typeof mdollar
+export default mdollar
 
 // 支持按需引入
 export * from "./arrary"
@@ -23,5 +24,6 @@ export * from "./is"
 export * from "./object"
 export * from "./string"
 export * from "./date"
+
 
 // npm publish --access=public 
