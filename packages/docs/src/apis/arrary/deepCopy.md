@@ -17,7 +17,7 @@ const addVersion="1.0.0"
 
 ### 例子
 
-```typescript
+```ts
 var objects = [{ a: 1 }, { b: 2 }];
 var deep = $$.deepCopy(objects);
 console.log(deep[0] === objects[0]);

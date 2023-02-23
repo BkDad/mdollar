@@ -20,7 +20,7 @@ export default defineConfig({
         },
         sidebar,
         nav: [
-            { text: '介绍', link: '/guide/whatIs' },
+            { text: '指南', link: '/guide/whatIs' },
             { text: '文档', link: '/apis/arrary/deepCopy' },
         ],
         socialLinks: [

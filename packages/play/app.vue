@@ -1,9 +1,15 @@
 <script lang="ts" setup>
 import $$ from "mdollar/src/index";
+
 import { onMounted, reactive } from "vue";
 const state = reactive({
   result: undefined as any,
 });
+class bbb {
+  showLoading = () => {};
+}
+
+
 onMounted(() => {
   const objcet = {};
   console.log($$.getUUID());
