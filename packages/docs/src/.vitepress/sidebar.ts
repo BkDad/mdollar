@@ -14,6 +14,10 @@ const guideSidebar = [
         text: '使用',
         link: '/guide/use'
     },
+    {
+        text: '更新日志',
+        link: '/guide/updateLog'
+    },
 
 ]
 /** 

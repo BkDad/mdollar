@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: mdollar
-  text: 快速进行业务开发
-  tagline: 封装了日常开发中经常使用的业务函数
+  text: development tool set
+  tagline: mdollar是一个轻量的JavaScript库，封装了开发中常见的函数
   image:
     src: /logo.png
     alt: Kitty
@@ -18,14 +18,14 @@ hero:
 
 features:
   - icon: ⚡️
-    title: 体积
-    details: 该工具包仅适用于日常业务开发，无冗余函数，支持按需引入，对TreeSharking友好
+    title: TreeSharking
+    details: 支持按需引入，只拿你想要的
   - icon: 🖖
     title: typescript类型支持
-    details: 工具函数全部使用typescrip开发
+    details: 使用typescrip开发，带有完整的ts文档
   - icon: 🛠️
     title: 持续迭代
-    details: 有问题请在Gitee上提pr，欢迎
+    details: 长期维护，有问题请在Gitee上提issues，也欢迎大家提出不足
 ---
 
 <style>
