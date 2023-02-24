@@ -4,15 +4,15 @@ export default defineConfig({
     base: "/mdollar/",
     outDir: "../build",
     title: "mdollar",
-    titleTemplate: ':title',
+    titleTemplate: ':title - mdollar',
     cleanUrls: true,
     head: [
         [
-            'link',
-            { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }
+            'link', { rel: 'icon', href: '/logo.png' }
         ]
     ],
     themeConfig: {
+        logo: "/logo.png",
         algolia: {
             appId: '...',
             apiKey: '...',

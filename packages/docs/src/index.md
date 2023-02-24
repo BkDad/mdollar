@@ -5,6 +5,9 @@ hero:
   name: mdollar
   text: 快速进行业务开发
   tagline: 封装了日常开发中经常使用的业务函数
+  image:
+    src: /logo.png
+    alt: Kitty
   actions:
     - theme: brand
       text: 快速上手
