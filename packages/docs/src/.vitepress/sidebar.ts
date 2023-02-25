@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Autor: 万洲
+ * @Date: 2023-02-25 13:13:00
+ * @LastEditors: 万洲
+ * @LastEditTime: 2023-02-25 18:51:08
+ */
 /**
  * 引导页侧栏
  */
@@ -25,7 +32,7 @@ const guideSidebar = [
  */
 const apisSidebar = [
     {
-        text: '数组',
+        text: '数组-array',
         collapsed: false,
         items: [
             { text: "deepCopy", link: '/apis/arrary/deepCopy' },
@@ -38,16 +45,9 @@ const apisSidebar = [
             { text: "getFlatTree", link: '/apis/arrary/getFlatTree' },
         ]
     },
+
     {
-        text: '业务',
-        collapsed: false,
-        items: [
-            { text: "getTimeState", link: '/apis/business/getTimeState' },
-            { text: "isMobile", link: '/apis/business/isMobile' },
-        ]
-    },
-    {
-        text: '日期',
+        text: '日期-Date',
         collapsed: false,
         items: [
             { text: "dateFormatter", link: '/apis/date/dateFormatter' },
@@ -56,7 +56,7 @@ const apisSidebar = [
         ]
     },
     {
-        text: '判断',
+        text: '判断-Is',
         collapsed: false,
         items: [
             { text: "isImage", link: '/apis/is/isImage' },
@@ -67,7 +67,7 @@ const apisSidebar = [
         ]
     },
     {
-        text: '字符串',
+        text: '字符串-string',
         collapsed: false,
         items: [
             { text: "toThousandsFormates", link: '/apis/string/toThousandsFormates' },
@@ -81,10 +81,29 @@ const apisSidebar = [
             { text: "getUUID", link: '/apis/string/getUUID' },
         ]
     },
+    {
+        text: '数字-number',
+        collapsed: false,
+        items: [
+            { text: "numberToChinese", link: '/apis/number/numberToChinese' },
+        ]
+    },
+    {
+        text: '其他-other',
+        collapsed: false,
+        items: [
+            { text: "getTimeState", link: '/apis/other/getTimeState' },
+            { text: "isMobile", link: '/apis/other/isMobile' },
+            { text: "sleep", link: '/apis/other/sleep' },
+        ]
+    },
 ]
-
+const hooksSidebar = [
+    { text: "useValidator", link: '/hooks/useValidator/api' },
+]
 
 export default {
     '/guide/': guideSidebar,
     '/apis/': apisSidebar,
+    "/hooks/": hooksSidebar
 }

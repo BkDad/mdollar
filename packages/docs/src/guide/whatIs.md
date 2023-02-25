@@ -1,8 +1,15 @@
+<!--
+ * @Description: 
+ * @Autor: 万洲
+ * @Date: 2023-02-25 13:13:00
+ * @LastEditors: 万洲
+ * @LastEditTime: 2023-02-25 18:05:28
+-->
 <script setup>
 </script>
 # 介绍
 
-`mdollar`是一个js工具库，适合用于日常开发，在Vue项目开发过程中，一套好用的js库是必不可少的，希望mdollar能成为您的选择。
+`mdollar`是一个js工具库，适合用于日常开发，其中有各种函数及hooks,在Vue项目开发过程中，一套好用的js库是必不可少的，希望mdollar能成为您的选择。
 
 ## 特性
 

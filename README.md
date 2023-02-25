@@ -1,5 +1,12 @@
+<!--
+ * @Description: 
+ * @Autor: 万洲
+ * @Date: 2023-02-25 13:13:00
+ * @LastEditors: 万洲
+ * @LastEditTime: 2023-02-25 13:13:52
+-->
 <p align="center">
-    <img alt="logo" src="./public/imgs/logo.png" width="120" height="120" style="margin-bottom: 10px;">
+    <img alt="logo" src="./packages/docs/src/public/logo.png" width="120" height="120" style="margin-bottom: 10px;">
 </p>
 <h3 align="center" style="margin: 30px 0 30px;font-weight: bold;font-size:40px;">mdollar</h3>
 <h3 align="center">常用开发函数JS工具库</h3>

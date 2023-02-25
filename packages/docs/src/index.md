@@ -4,7 +4,7 @@ layout: home
 hero:
   name: mdollar
   text: development tool set
-  tagline: mdollar是一个轻量的JavaScript库，封装了开发中常见的函数
+  tagline: mdollar是一个轻量的JavaScript库，封装了开发中常见的函数及hooks
   image:
     src: /logo.png
     alt: Kitty

@@ -1,26 +1,26 @@
 <script lang="ts" setup>
-import $$ from "mdollar/src/index";
+import { IFormRule, useValidator } from "mdollar";
+import { reactive, PropType } from "vue";
 
-import { onMounted, reactive } from "vue";
 const state = reactive({
-  result: undefined as any,
+  formModel: {
+    age: 18,
+    name: undefined,
+  },
 });
-class bbb {
-  showLoading = () => {};
-}
+const formController = useValidator((errorMsg) => alert(errorMsg));
+const formRules: IFormRule[] = [
+  { name: "age", msg: ["请输入年龄"], rule: [formController.rules.required] },
+  { name: "name", msg: ["请输入姓名"], rule: [formController.rules.required] },
+];
 
-
-onMounted(() => {
-  const objcet = {};
-  console.log($$.getUUID());
-  let result = $$.checkSpecialCharacters("abcd！");
-  state.result = result;
-});
+const handleSubmit = () => {
+  formController.check(state.formModel, formRules);
+};
 </script>
 <template>
   <div class="contaier">
-    <div>输出结果</div>
-    <div>{{ JSON.stringify(state.result) || "无" }}</div>
+    <button @click="handleSubmit">校验</button>
   </div>
 </template>
 <style lang="scss" scoped>
