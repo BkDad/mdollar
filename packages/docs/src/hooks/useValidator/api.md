@@ -140,7 +140,7 @@ const handleSubmit = () => {
 ### 类型定义
 
 ::: code-group
-```useValidator类型
+```typescript [useValidator类型]
 /**
  * 使用表单校验
  * @param errorCallBack 校验失败回调
