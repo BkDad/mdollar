@@ -6,5 +6,6 @@
  * @LastEditTime: 2023-02-25 13:56:07
  */
 export { getTimeState } from "./getTimeState"
-export { isMobile } from "./isMobile"
 export { sleep } from "./sleep"
+export { debounce } from "./debounce"
+export { throttle } from "./throttle"

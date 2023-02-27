@@ -64,6 +64,7 @@ const apisSidebar = [
             { text: "objIsNull", link: '/apis/is/objIsNull' },
             { text: "arraryHaveValue", link: '/apis/is/arraryHaveValue' },
             { text: "checkSpecialCharacters", link: '/apis/is/checkSpecialCharacters' },
+            { text: "isMobile", link: '/apis/is/isMobile' },
         ]
     },
     {
@@ -93,13 +94,16 @@ const apisSidebar = [
         collapsed: false,
         items: [
             { text: "getTimeState", link: '/apis/other/getTimeState' },
-            { text: "isMobile", link: '/apis/other/isMobile' },
             { text: "sleep", link: '/apis/other/sleep' },
+            { text: "debounce", link: '/apis/other/debounce' },
+            { text: "throttle", link: '/apis/other/throttle' },
         ]
     },
 ]
 const hooksSidebar = [
     { text: "useValidator", link: '/hooks/useValidator/api' },
+    { text: "useUrlParams", link: '/hooks/useUrlParams/api' },
+    { text: "useElementPlusTheme", link: '/hooks/useElementPlusTheme/api' },
 ]
 
 export default {

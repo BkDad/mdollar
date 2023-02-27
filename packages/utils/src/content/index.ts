@@ -12,7 +12,8 @@ import * as date from "./date"
 import * as is from "./is"
 import * as number from "./number"
 import * as object from "./object"
-export default { ...array, ...other, ...date, ...is, ...number, ...object }
+import * as string from "./string"
+export default { ...array, ...other, ...date, ...is, ...number, ...object, ...string }
 
 export * from "./array"
 export * from "./other"
@@ -20,3 +21,4 @@ export * from "./date"
 export * from "./is"
 export * from "./number"
 export * from "./object"
+export * from "./string"

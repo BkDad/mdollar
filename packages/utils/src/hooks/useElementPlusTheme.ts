@@ -1,10 +1,3 @@
-/*
- * @Description: 
- * @Autor: 万洲
- * @Date: 2022-11-23 15:39:49
- * @LastEditors: 万洲
- * @LastEditTime: 2023-02-25 15:43:52
- */
 /** 变量前缀 */
 const PRE = '--el-color-primary'
 const PRE_LIGHT = `${PRE}-light`
@@ -41,10 +34,10 @@ const changeTheme = (color?: string) => {
     html.style.setProperty(PRE, color)
     // 循环设置次级颜色
     for (let i = 1; i < 10; i += 1) {
-        html.style.setProperty(`${PRE_LIGHT}-${i}`, mix(color, "#fff", i * 0.1))
+        html.style.setProperty(`${PRE_LIGHT}-${i}`, mix(color, "#ffffff", i * 0.1))
     }
     // 设置主要暗色
-    const dark = mix(color, "#000", 0.2)
+    const dark = mix(color, "#000000", 0.2)
     html.style.setProperty(`${PRE_DARK}-2`, dark)
 }
 
@@ -53,7 +46,7 @@ const changeTheme = (color?: string) => {
  * @param color 切换颜色
  * @returns 
  */
-export const useElementPlusTheme=(color?: string)=> {
+export const useElementPlusTheme = (color?: string) => {
     changeTheme(color)
     return {
         changeTheme

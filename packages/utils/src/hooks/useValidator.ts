@@ -6,7 +6,7 @@
  * @LastEditTime: 2023-02-25 18:21:07
  */
 import { arraryHaveValue } from "../content";
-export type IFormRule= {
+export type IFormRule = {
     name: string;
     rule: TRuleEnum | string[];
     msg: string[];

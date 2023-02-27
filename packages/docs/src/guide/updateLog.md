@@ -10,6 +10,15 @@
 
 [[toc]]
 
+### v1.0.5
+
+---
+- 修复string模块缺失 
+- 新增函数防抖 [debounce](../apis/other/debounce.md)
+- 新增函数节流 [throttle](../apis/other/throttle.md)
+- 新增hooks [useUrlParams](../hooks/useUrlParams/api.md)
+- 新增hooks [useElementPlusTheme](../hooks/useElementPlusTheme/api.md)
+
 ### v1.0.4
 
 ---

@@ -28,11 +28,13 @@ importers:
   packages/play:
     specifiers:
       '@vitejs/plugin-vue': ^4.0.0
+      element-plus: ^2.2.32
       mdollar: workspace:^1.0.2
       sass: ^1.58.3
       vite: ^4.1.1
       vue: ^3.2.47
     dependencies:
+      element-plus: 2.2.32_vue@3.2.47
       mdollar: link:../utils
       sass: 1.58.3
       vue: 3.2.47
@@ -2273,7 +2275,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.1.4
+      vite: 4.1.4_sass@1.58.3
       vue: 3.2.47
 
   /@vue/compiler-core/3.2.47:
@@ -7163,7 +7165,6 @@ packages:
       sass: 1.58.3
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /vitepress/1.0.0-alpha.47:
     resolution: {integrity: sha512-vj+LOY0WJtKSk98HV4qqG6p4MofmF+C8yrWHiiw+GCMfr6C+610U5D7oD2OruroIafsON6F4nBDWGK8ZyGIpXQ==}
