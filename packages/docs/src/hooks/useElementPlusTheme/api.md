@@ -6,7 +6,6 @@
  * @LastEditTime: 2023-02-25 19:50:35
 -->
 <script setup lang="ts">
-import Demo1 from "./Demo1.vue"
     /** 方法描述 */
 const methodDescription="一个帮你完成element-plus动态主题的hooks"
 /** 添加版本 */
@@ -23,7 +22,6 @@ const addVersion="1.0.5"
 {{addVersion}}
 
 #### 示例
-<Demo1/>
 
 ::: code-group
 
@@ -56,21 +54,19 @@ watch(
 
 ```
 
-
 :::
 
 ### 类型定义
 
-
-
-```typescript 
+```typescript
 /**
  * 动态更改element-plus主题
  * @param color 切换颜色
- * @returns 
+ * @returns
  */
-const useElementPlusTheme: (color?: string) => {
-    changeTheme: (color?: string) => void;
-}
+const useElementPlusTheme: (
+  color?: string
+) => {
+  changeTheme: (color?: string) => void;
+};
 ```
-

@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import { useUrlParams } from "mdollar/src/index";
-interface IParams {
-  name: string;
-}
-const params = useUrlParams<IParams>();
-console.log(params.name);
+import { debounce } from "mdollar/src";
+const test = debounce((name: string) => {
+  console.log("name===", name);
+});
 </script>
-<template></template>
+<template>
+  <button @click="test('wz')">1111</button>
+</template>
+<style lang="scss" scoped></style>
