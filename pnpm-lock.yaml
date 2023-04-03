@@ -51,8 +51,10 @@ importers:
       tsdx: ^0.14.1
       tslib: ^2.4.0
       typescript: ^4.8.4
+      vue: ^3.2.47
     dependencies:
       '@types/jest': 29.4.0
+      vue: 3.2.47
     devDependencies:
       '@size-limit/preset-small-lib': 8.2.4_size-limit@8.2.4
       husky: 8.0.3
@@ -2275,7 +2277,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.1.4_sass@1.58.3
+      vite: 4.1.4
       vue: 3.2.47
 
   /@vue/compiler-core/3.2.47:
@@ -7165,6 +7167,7 @@ packages:
       sass: 1.58.3
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
 
   /vitepress/1.0.0-alpha.47:
     resolution: {integrity: sha512-vj+LOY0WJtKSk98HV4qqG6p4MofmF+C8yrWHiiw+GCMfr6C+610U5D7oD2OruroIafsON6F4nBDWGK8ZyGIpXQ==}
