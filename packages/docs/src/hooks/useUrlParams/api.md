@@ -27,7 +27,7 @@ const addVersion="1.0.5"
 
 ```typescript [基本使用]
 <script lang="ts" setup>
-import { useUrlParams } from "mdollar/src/index";
+import { useUrlParams } from "mdollar";
 interface IParams {
   name: string;
 }

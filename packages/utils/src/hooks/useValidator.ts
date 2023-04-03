@@ -5,7 +5,7 @@
  * @LastEditors: 万洲
  * @LastEditTime: 2023-02-25 18:21:07
  */
-import { arraryHaveValue } from "../content";
+import { arrayHasValue } from "../content";
 export type IFormRule = {
     name: string;
     rule: TRuleEnum | string[];
@@ -72,7 +72,7 @@ export enum TRuleEnum {
 
 const ruleFuctions: Record<string, (value?: any, value2?: any, value3?: any) => boolean> = {
     _isArrHaveValue: function (value) {
-        return arraryHaveValue(value)
+        return arrayHasValue(value)
     },
     //允许填写字符串null或者undefined
     _isNullOrEmpty: function (value) {

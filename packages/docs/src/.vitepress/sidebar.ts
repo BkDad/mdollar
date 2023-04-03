@@ -62,9 +62,16 @@ const apisSidebar = [
             { text: "isImage", link: '/apis/is/isImage' },
             { text: "isVedio", link: '/apis/is/isVedio' },
             { text: "objIsNull", link: '/apis/is/objIsNull' },
-            { text: "arraryHaveValue", link: '/apis/is/arraryHaveValue' },
+            { text: "arrayHasValue", link: '/apis/is/arrayHasValue' },
             { text: "checkSpecialCharacters", link: '/apis/is/checkSpecialCharacters' },
             { text: "isMobile", link: '/apis/is/isMobile' },
+            { text: "isFunction", link: '/apis/is/isFunction' },
+            { text: "isUrl", link: '/apis/is/isUrl' },
+            { text: "isEmail", link: '/apis/is/isEmail' },
+            { text: "isNumber", link: '/apis/is/isNumber' },
+            { text: "isObject", link: '/apis/is/isObject' },
+            { text: "isPalindrome", link: '/apis/is/isPalindrome' },
+            { text: "isDate", link: '/apis/is/isDate' },
         ]
     },
     {
@@ -104,6 +111,10 @@ const hooksSidebar = [
     { text: "useValidator", link: '/hooks/useValidator/api' },
     { text: "useUrlParams", link: '/hooks/useUrlParams/api' },
     { text: "useElementPlusTheme", link: '/hooks/useElementPlusTheme/api' },
+    { text: "useClipboard", link: '/hooks/useClipboard/api' },
+    { text: "useHover", link: '/hooks/useHover/api' },
+    { text: "useOnlineStatus", link: '/hooks/useOnlineStatus/api' },
+    { text: "useSwipe", link: '/hooks/useSwipe/api' },
 ]
 
 export default {

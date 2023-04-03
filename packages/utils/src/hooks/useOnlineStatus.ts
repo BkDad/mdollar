@@ -5,8 +5,13 @@
  * @LastEditors: 万洲
  * @LastEditTime: 2023-04-02 21:55:09
  */
-import { ref, onMounted, onUnmounted } from "vue";
+// @ts-ignore
+import { ref, onMounted, onUnmounted, watch } from "vue";
 
+/**
+ * 监听用户在线状态
+ * @returns 
+ */
 export const useOnlineStatus = () => {
     const isOnline = ref(navigator.onLine);
     const onlineHandler = () => {
@@ -16,9 +21,12 @@ export const useOnlineStatus = () => {
     const offlineHandler = () => {
         isOnline.value = false;
     };
+    const onOnlineChange = (callback: (value: boolean) => void) => {
+        watch(isOnline, () => {
+            callback(isOnline.value);
+        });
+    };
     onMounted(() => {
-
-
         window.addEventListener("online", onlineHandler);
         window.addEventListener("offline", offlineHandler);
     });
@@ -28,5 +36,5 @@ export const useOnlineStatus = () => {
         window.removeEventListener("offline", offlineHandler);
     });
 
-    return isOnline;
+    return { isOnline, onOnlineChange };
 };

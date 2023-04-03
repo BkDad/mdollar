@@ -13,7 +13,7 @@ import * as is from "./is"
 import * as number from "./number"
 import * as object from "./object"
 import * as string from "./string"
-export default { ...array, ...other, ...is, ...number, ...object, ...string, ...date }
+export default { ...array, ...other, ...number, ...object, ...string, ...date, ...is, }
 
 export * from "./array"
 export * from "./other"

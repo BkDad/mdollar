@@ -1,3 +1,4 @@
+// @ts-ignore
 import { onMounted, onUnmounted, Ref } from "vue";
 
 type SwipeDirection = "left" | "right" | "none";

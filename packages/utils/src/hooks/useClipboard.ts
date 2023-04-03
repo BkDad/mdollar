@@ -1,17 +1,24 @@
+// @ts-ignore
 import { ref, onMounted, onUnmounted } from "vue";
+
 
 export const useClipboard = () => {
     const copiedText = ref("");
     const copyError = ref<string | null>(null);
-
-    const copyText = async (text: string) => {
+    /**
+     * 
+     * @param options text:需要复制的文本  success 复制成功回调函数  fail：复制失败回调函数
+     */
+    const copyText = async (options: { text: string, success?: () => void, fail?: () => void }) => {
         try {
-            await navigator.clipboard.writeText(text);
-            copiedText.value = text;
+            await navigator.clipboard.writeText(options.text);
+            copiedText.value = options.text;
             copyError.value = null;
-        } catch (error: any) {
+            options.success?.()
+        } catch (error) {
             copiedText.value = "";
-            copyError.value = error.message;
+            copyError.value = (error as any).message;
+            options.fail?.()
         }
     };
 

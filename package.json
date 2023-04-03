@@ -14,7 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "tsdx": "^0.14.1",
-    "vite": "^4.1.1",
-    "vitepress": "^1.0.0-alpha.46"
+    "vite": "^4.1.4",
+    "vitepress": "1.0.0-alpha.64",
+    "vue": "^3.2.47"
   }
 }

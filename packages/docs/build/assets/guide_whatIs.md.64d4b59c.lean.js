@@ -1,0 +1,1 @@
+import{_ as a,i as e,h as t,R as o}from"./chunks/framework.51baf4c1.js";const m=JSON.parse('{"title":"介绍","description":"","frontmatter":{},"headers":[],"relativePath":"guide/whatIs.md"}'),r={name:"guide/whatIs.md"},l=o("",6),s=[l];function i(c,d,n,_,h,u){return t(),e("div",null,s)}const f=a(r,[["render",i]]);export{m as __pageData,f as default};
