@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useSwipe } from "mdollar/src/hooks";
+import { useSwipe } from "mdollar";
 import { ref } from "vue";
 import { ElMessage } from "element-plus";
 const divRef = ref();

@@ -34,7 +34,7 @@ const addVersion="1.0.9"
 
 ```typescript [基本使用]
 <script lang="ts" setup>
-import { useSwipe } from "mdollar/src/hooks";
+import { useSwipe } from "mdollar";
 import { ref } from "vue";
 import { ElMessage } from "element-plus";
 const divRef = ref();
