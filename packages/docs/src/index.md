@@ -24,8 +24,11 @@ features:
     title: typescript类型支持
     details: 使用typescrip开发，带有完整的ts文档
   - icon: 🛠️
-    title: 持续迭代
-    details: 长期维护，有问题请在Gitee上提issues，也欢迎大家提出不足
+    title: 代码简洁、易读、易维护
+    details: 遵循了 eslint 和 prettier 的规范
+  - icon: 🧪
+    title: 使用 jest 进行单元测试
+    details: 覆盖率高达 90%
 ---
 
 <style>

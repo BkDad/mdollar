@@ -1,5 +1,3 @@
-
-
 <p align="center">
     <img alt="logo" src="./public/logo.png" width="120" height="120" style="margin-bottom: 10px;">
 </p>
@@ -8,18 +6,17 @@
 
 ## 介绍
 
-mdollar是一个支持vue3的开源工具库，使用typescript编写，提供了各种实用的函数和自定义的hooks，让你的vue开发更加方便和高效。
+mdollar 是一个支持 vue3 的开源工具库，使用 typescript 编写，提供了各种实用的函数和自定义的 hooks，让你的 vue 开发更加方便和高效。
 
-## [文档：https://baikebaba.gitee.io/mdollar/](https://baikebaba.gitee.io/mdollar/)
 
 ## 特性
 
-- 全面支持vue3和typescript，充分利用了vue3的composition api和typescript的类型系统
+- 全面支持 vue3 和 typescript，充分利用了 vue3 的 composition api 和 typescript 的类型系统
 - 包含了常用的函数，如防抖、节流、深拷贝、日期格式化等
-- 包含了多种自定义的hooks，如useUrlParams、useHover、useSwipe等，可以轻松实现各种常见的功能
-- 代码简洁、易读、易维护，遵循了eslint和prettier的规范
-- 使用jest进行单元测试，覆盖率高达90%
-- 使用vitepress生成文档，方便查阅和学习
+- 包含了多种自定义的 hooks，如 useUrlParams、useHover、useSwipe 等，可以轻松实现各种常见的功能
+- 代码简洁、易读、易维护，遵循了 eslint 和 prettier 的规范
+- 使用 jest 进行单元测试，覆盖率高达 90%
+- 使用 vitepress 生成文档，方便查阅和学习
 
 ## 快速上手
 
@@ -35,21 +32,21 @@ npm install mdollar --save
 yarn add mdollar
 ```
 
-### 完整引入(不包含hooks)
+### 工具函数引用-完整引入(不包含 hooks)
 
 ```typescript
 import $$ from "mdollar";
 $$.deepCopy({ name: "mdollar" });
 ```
 
-### 按需引入
+### 工具函数引用-按需引入
 
 ```typescript
 import { deepCopy } from "mdollar";
 $$.deepCopy({ name: "mdollar" });
 ```
 
-### 使用
+### Hooks 使用
 
 ```ts
 <script lang="ts" setup>
@@ -70,12 +67,12 @@ const handleCopy = () => {
 
 ### 文档
 
-你可以在[这里](https://baikebaba.gitee.io/mdollar/)查看完整的文档，了解更多的函数和hooks的用法和参数。
+你可以在[这里](https://baikebaba.gitee.io/mdollar/)查看完整的文档，了解更多的函数和 hooks 的用法和参数。
 
 ### 贡献
 
-如果你对本项目感兴趣，欢迎提出issue或pull request.
+如果你对本项目感兴趣，欢迎提出 issue 或 pull request.
 
 ### 许可
 
-本项目遵循MIT协议，你可以自由地使用、修改和分发本项目。
+本项目遵循 MIT 协议，你可以自由地使用、修改和分发本项目。
