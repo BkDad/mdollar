@@ -1,10 +1,5 @@
-<!--
- * @Description:
- * @Autor: 万洲
- * @Date: 2023-02-25 13:13:00
- * @LastEditors: 万洲
- * @LastEditTime: 2023-02-25 13:13:52
--->
+
+
 <p align="center">
     <img alt="logo" src="./public/logo.png" width="120" height="120" style="margin-bottom: 10px;">
 </p>
@@ -13,15 +8,18 @@
 
 ## 介绍
 
-`mdollar`是一个 js 工具库，适合用于日常开发，在 Vue 项目开发过程中，一套好用的 js 库是必不可少的，希望 mdollar 能成为您的选择。
+mdollar是一个支持vue3的开源工具库，使用typescript编写，提供了各种实用的函数和自定义的hooks，让你的vue开发更加方便和高效。
 
 ## [文档：https://baikebaba.gitee.io/mdollar/](https://baikebaba.gitee.io/mdollar/)
 
 ## 特性
 
-- 完整的 ts 类型支持
-- 体积小，只保留日常常用业务开发函数
-- 按需引入，精简打包体积
+- 全面支持vue3和typescript，充分利用了vue3的composition api和typescript的类型系统
+- 包含了常用的函数，如防抖、节流、深拷贝、日期格式化等
+- 包含了多种自定义的hooks，如useUrlParams、useHover、useSwipe等，可以轻松实现各种常见的功能
+- 代码简洁、易读、易维护，遵循了eslint和prettier的规范
+- 使用jest进行单元测试，覆盖率高达90%
+- 使用vitepress生成文档，方便查阅和学习
 
 ## 快速上手
 
@@ -29,7 +27,15 @@
 
 ## 使用方法
 
-### 完整引入
+### 安装
+
+```ts
+npm install mdollar --save
+# or
+yarn add mdollar
+```
+
+### 完整引入(不包含hooks)
 
 ```typescript
 import $$ from "mdollar";
@@ -42,3 +48,34 @@ $$.deepCopy({ name: "mdollar" });
 import { deepCopy } from "mdollar";
 $$.deepCopy({ name: "mdollar" });
 ```
+
+### 使用
+
+```ts
+<script lang="ts" setup>
+import { useClipboard } from "mdollar/src/hooks";
+import { ref } from "vue";
+import { ElMessage } from "element-plus";
+const inputValue = ref();
+const { copyText, copiedText } = useClipboard();
+const handleCopy = () => {
+  copyText({
+    text: inputValue.value,
+    success: () => ElMessage({ message: "复制成功", type: "success" }),
+    fail: () => ElMessage({ message: "复制失败", type: "error" }),
+  });
+};
+</script>
+```
+
+### 文档
+
+你可以在[这里](https://baikebaba.gitee.io/mdollar/)查看完整的文档，了解更多的函数和hooks的用法和参数。
+
+### 贡献
+
+如果你对本项目感兴趣，欢迎提出issue或pull request.
+
+### 许可
+
+本项目遵循MIT协议，你可以自由地使用、修改和分发本项目。
