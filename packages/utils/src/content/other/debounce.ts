@@ -6,7 +6,7 @@
  * @returns 
  */
 export function debounce<T>(fn: T, time = 500, config: { first?: boolean, end?: boolean } = { first: true, end: false }): T {
-    let timeout: number | null = null;
+    let timeout: any = null;
     if (typeof fn !== 'function') {
         throw new TypeError('类型错误，传入函数不是一个方法')
     }

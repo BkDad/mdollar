@@ -1,4 +1,5 @@
 packages:
     - 'packages/utils'
-    - 'packages/play'
+    - 'packages/play-vue3'
+    - 'packages/play-vue2'
     - 'packages/docs'

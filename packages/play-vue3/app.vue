@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useClipboard } from "mdollar";
+import { useClipboard } from "mdollar/src";
 import { ref } from "vue";
 import { ElMessage } from "element-plus";
 const inputValue = ref();
