@@ -1,0 +1,1 @@
+import{_ as a,i as e,h as i,R as l}from"./chunks/framework.51baf4c1.js";const f=JSON.parse('{"title":"更新日志","description":"","frontmatter":{},"headers":[],"relativePath":"guide/updateLog.md"}'),s={name:"guide/updateLog.md"},r=l("",17),o=[r];function t(h,u,n,d,p,v){return i(),e("div",null,o)}const m=a(s,[["render",t]]);export{f as __pageData,m as default};

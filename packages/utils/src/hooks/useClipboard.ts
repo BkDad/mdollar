@@ -1,5 +1,5 @@
 // @ts-ignore
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue-demi";
 
 
 export const useClipboard = () => {

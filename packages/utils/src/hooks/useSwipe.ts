@@ -1,5 +1,5 @@
 // @ts-ignore
-import { onMounted, onUnmounted, Ref } from "vue";
+import { onMounted, onUnmounted, Ref } from "vue-demi";
 
 type SwipeDirection = "left" | "right" | "none";
 

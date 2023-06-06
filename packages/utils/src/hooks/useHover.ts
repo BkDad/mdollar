@@ -6,7 +6,7 @@
  * @LastEditTime: 2023-04-02 21:56:35
  */
 // @ts-ignore
-import { ref, onMounted, onUnmounted, Ref, watch } from "vue";
+import { ref, onMounted, onUnmounted, Ref, watch } from "vue-demi";
 
 /**
  * 监听元素hover状态
