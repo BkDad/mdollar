@@ -1,27 +1,19 @@
 <script lang="ts" setup>
-import { useClipboard } from "mdollar/src";
+import { useValidator } from "mdollar/src/hooks/useValidator";
 import { ref } from "vue";
 import { ElMessage } from "element-plus";
 const inputValue = ref();
-const { copyText, copiedText } = useClipboard();
-const handleCopy = () => {
-  copyText({
-    text: inputValue.value,
-    success: () => ElMessage({ message: "复制成功", type: "success" }),
-    fail: () => ElMessage({ message: "复制失败", type: "error" }),
-  });
+const validate = useValidator((msg) => alert(msg));
+
+const test = () => {
+  validate.check({ imgList: [] }, [
+    { msg: ["66666"], rule: [validate.rules.required], name: "imgList" },
+  ]);
 };
 </script>
 <template>
   <div style="display: flex;gap: 12px;">
-    <el-input
-      style="width: 200px;"
-      type="text"
-      v-model="inputValue"
-      placeholder="请输入"
-    />
-    <el-button @click="handleCopy" type="primary">复制</el-button>
+    <button @click="test">123123123</button>
   </div>
-  <div style="margin-top: 12px;">当前复制值:{{ copiedText || "无" }}</div>
 </template>
 <style lang="scss" scoped></style>

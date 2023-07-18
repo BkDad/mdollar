@@ -70,6 +70,7 @@ export enum TRuleEnum {
 }
 
 
+
 const ruleFuctions: Record<string, (value?: any, value2?: any, value3?: any) => boolean> = {
     _isArrHaveValue: function (value) {
         return arrayHasValue(value)
@@ -257,6 +258,7 @@ const form = {
       非必填情况下，如果值为空则不进行校验
     */
     validator: <T>(formData: T, rules: IFormRule[]) => {
+
         let result = {
             isPassed: true,
             errorMsg: ''
@@ -268,6 +270,7 @@ const form = {
             const msgArr = item.msg || [];
             const ruleLen = rule.length;
             const validatorLen = validator.length;
+
             if (!key || (ruleLen === 0 && validatorLen === 0) || (!~rule.indexOf("required") &&
                 formData[key]?.toString()
                     .length === 0)) {
@@ -290,6 +293,10 @@ const form = {
                     switch (ruleItem) {
                         case "required":
                             isError = ruleFuctions._isNullOrEmpty(formData[key]);
+                            if (Array.isArray(formData[key])) {
+                                console.log(formData[key].length);
+                                isError = formData[key].length === 0
+                            }
                             break;
                         case "isMobile":
                             isError = !ruleFuctions._isMobile(formData[key]);
@@ -397,6 +404,7 @@ interface IValidatorRes {
  */
 export const useValidator = (errorCallBack?: ((errorMsg: string) => void) | ((errorMsg: string) => Promise<void>)) => {
     const check = <T>(formModel: T, rules: IFormRule[]): IValidatorRes => {
+
         let result: IValidatorRes = form.validator(formModel, rules)
         if (result.isPassed) return result
         errorCallBack && errorCallBack(result.errorMsg)
