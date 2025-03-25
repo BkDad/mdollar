@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.2.10",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@types/jest": "^29.4.0",
-    "@vue/composition-api": "^1.7.1"
+    "@vue/composition-api": "^1.7.1",
+    "vue-demi": "^0.14.10"
   }
- 
 }
