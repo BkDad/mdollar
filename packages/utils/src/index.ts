@@ -10,3 +10,4 @@ export * from "./hooks"
 export * from "./content"
 import utils from "./content"
 export default utils
+// npm publish --registry=https://registry.npmjs.org --access public

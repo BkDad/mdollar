@@ -403,7 +403,7 @@ interface IValidatorRes {
  * @returns 
  */
 export const useValidator = (errorCallBack?: ((errorMsg: string) => void) | ((errorMsg: string) => Promise<void>)) => {
-    const check = <T>(formModel: T, rules: IFormRule[]): IValidatorRes => {
+    const check = <T extends object>(formModel: T, rules: IFormRule[]): IValidatorRes => {
 
         let result: IValidatorRes = form.validator(formModel, rules)
         if (result.isPassed) return result
