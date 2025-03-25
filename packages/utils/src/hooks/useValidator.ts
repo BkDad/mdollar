@@ -5,7 +5,7 @@
  * @LastEditors: 万洲
  * @LastEditTime: 2023-02-25 18:21:07
  */
-import { arrayHasValue } from "../content";
+import { arrayHasValue, getObjValue } from "../content";
 export type IFormRule = {
     name: string;
     rule: TRuleEnum | string[];
@@ -257,7 +257,7 @@ const form = {
     /*
       非必填情况下，如果值为空则不进行校验
     */
-    validator: <T>(formData: T, rules: IFormRule[]) => {
+    validator: <T extends object>(formData: T, rules: IFormRule[]) => {
 
         let result = {
             isPassed: true,
@@ -270,9 +270,9 @@ const form = {
             const msgArr = item.msg || [];
             const ruleLen = rule.length;
             const validatorLen = validator.length;
-
+            const testValue = getObjValue(formData, key)
             if (!key || (ruleLen === 0 && validatorLen === 0) || (!~rule.indexOf("required") &&
-                formData[key]?.toString()
+                testValue?.toString()
                     .length === 0)) {
                 continue;
             }
@@ -292,77 +292,77 @@ const form = {
                     let isError = false;
                     switch (ruleItem) {
                         case "required":
-                            isError = ruleFuctions._isNullOrEmpty(formData[key]);
-                            if (Array.isArray(formData[key])) {
-                                console.log(formData[key].length);
-                                isError = formData[key].length === 0
+                            isError = ruleFuctions._isNullOrEmpty(testValue);
+                            if (Array.isArray(testValue)) {
+                                console.log(testValue.length);
+                                isError = testValue.length === 0
                             }
                             break;
                         case "isMobile":
-                            isError = !ruleFuctions._isMobile(formData[key]);
+                            isError = !ruleFuctions._isMobile(testValue);
                             break;
                         case "isEmail":
-                            isError = !ruleFuctions._isEmail(formData[key]);
+                            isError = !ruleFuctions._isEmail(testValue);
                             break;
                         case "isCarNo":
-                            isError = !ruleFuctions._isCarNo(formData[key]);
+                            isError = !ruleFuctions._isCarNo(testValue);
                             break;
                         case "isIdCard":
-                            isError = !ruleFuctions._isIdCard(formData[key]);
+                            isError = !ruleFuctions._isIdCard(testValue);
                             break;
                         case "isAmount":
-                            isError = !ruleFuctions._isAmount(formData[key]);
+                            isError = !ruleFuctions._isAmount(testValue);
                             break;
                         case "isNumber":
-                            isError = !ruleFuctions._isNumber(formData[key]);
+                            isError = !ruleFuctions._isNumber(testValue);
                             break;
                         case "isChinese":
-                            isError = !ruleFuctions._isChinese(formData[key]);
+                            isError = !ruleFuctions._isChinese(testValue);
                             break;
                         case "isNotChinese":
-                            isError = !ruleFuctions._isNotChinese(formData[key]);
+                            isError = !ruleFuctions._isNotChinese(testValue);
                             break;
                         case "isEnglish":
-                            isError = !ruleFuctions._isEnglish(formData[key]);
+                            isError = !ruleFuctions._isEnglish(testValue);
                             break;
                         case "isEnAndNo":
-                            isError = !ruleFuctions._isEnAndNo(formData[key]);
+                            isError = !ruleFuctions._isEnAndNo(testValue);
                             break;
                         case "isEnOrNo":
-                            isError = !ruleFuctions._isEnOrNo(formData[key]);
+                            isError = !ruleFuctions._isEnOrNo(testValue);
                             break;
                         case "isSpecial":
-                            isError = ruleFuctions._isSpecial(formData[key]);
+                            isError = ruleFuctions._isSpecial(testValue);
                             break;
                         case "isEmoji":
-                            isError = ruleFuctions._isEmoji(formData[key]);
+                            isError = ruleFuctions._isEmoji(testValue);
                             break;
                         case "isDate":
-                            isError = !ruleFuctions._isDate(formData[key]);
+                            isError = !ruleFuctions._isDate(testValue);
                             break;
                         case "isUrl":
-                            isError = !ruleFuctions._isUrl(formData[key]);
+                            isError = !ruleFuctions._isUrl(testValue);
                             break;
                         case "isSame":
                             //@ts-ignore
-                            isError = !ruleFuctions._isSame(formData[key], formData[value]);
+                            isError = !ruleFuctions._isSame(testValue, formData[value]);
                             break;
                         case "range":
                             let range = null;
                             range = JSON.parse(value!);
-                            isError = !ruleFuctions._isRange(formData[key], range[0], range[1])
+                            isError = !ruleFuctions._isRange(testValue, range[0], range[1])
                             break;
                         case "minLength":
-                            isError = !ruleFuctions._minLength(formData[key], value)
+                            isError = !ruleFuctions._minLength(testValue, value)
                             break;
                         case "maxLength":
-                            isError = !ruleFuctions._maxLength(formData[key], value)
+                            isError = !ruleFuctions._maxLength(testValue, value)
                             break;
                         case "isKeyword":
-                            isError = !ruleFuctions._isKeyword(formData[key], value)
+                            isError = !ruleFuctions._isKeyword(testValue, value)
                             break;
                         case "isArrayHaveValue":
-                            isError = !ruleFuctions._isArrHaveValue(formData[key], value)
+                            isError = !ruleFuctions._isArrHaveValue(testValue, value)
                             break;
                         default:
                             break;
@@ -380,7 +380,7 @@ const form = {
                 for (let model of validator) {
                     let func = model.method;
                     //@ts-ignore
-                    if (func && !func(formData[key])) {
+                    if (func && !func(testValue)) {
                         result.isPassed = false;
                         result.errorMsg = model.msg || `${key} error !`;
                         return result;

@@ -1,1 +1,2 @@
-export { mapObjectToQueryString } from "./mapObjectToQueryString"
+export { mapObjectToQueryString, } from "./mapObjectToQueryString"
+export { getObjValue } from "./getObjValue"
