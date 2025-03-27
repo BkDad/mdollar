@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev:doc": "vitepress dev packages/docs/src",
-    "dev:play3": "vite packages/play-vue3",
-    "dev:play2": "vue-cli-service serve packages/play-vue2/src",
+    "dev:play3": "vite examples/play-vue3",
     "dev:util": "tsdx watch packages/utils",
     "build:doc": "vitepress build packages/docs/src"
   },

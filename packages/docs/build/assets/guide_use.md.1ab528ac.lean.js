@@ -1,1 +1,0 @@
-import{_ as s,i as a,h as o,R as l}from"./chunks/framework.51baf4c1.js";const A=JSON.parse('{"title":"使用方法","description":"","frontmatter":{},"headers":[],"relativePath":"guide/use.md"}'),n={name:"guide/use.md"},p=l("",9),e=[p];function t(r,c,D,y,i,F){return o(),a("div",null,e)}const d=s(n,[["render",t]]);export{A as __pageData,d as default};
