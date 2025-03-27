@@ -7,7 +7,7 @@
     "dev:doc": "vitepress dev packages/docs/src",
     "dev:play3": "vite examples/play-vue3",
     "dev:util": "tsdx watch packages/utils",
-    "build:doc": "vitepress build packages/docs/src"
+    "build:doc": "vitepress build docs"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +15,7 @@
   "dependencies": {
     "tsdx": "^0.14.1",
     "vite": "^4.1.4",
-    "vue": "^3.2.47",
+    "vitepress": "1.0.0-alpha.64",
     "vue-demi": "^0.14.10"
   }
 }

@@ -1,10 +1,4 @@
-/*
- * @Description: 
- * @Autor: 万洲
- * @Date: 2023-04-02 21:52:43
- * @LastEditors: 万洲
- * @LastEditTime: 2023-04-02 21:55:09
- */
+// @ts-ignore
 import { ref, onMounted, onUnmounted, watch } from "vue-demi";
 
 /**
